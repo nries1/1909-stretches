@@ -26,6 +26,23 @@ productWhichMadeMostMoney returns an object with an id for that product and a to
 
 //write the productWhichMadeMostMoney function
 
-function bestSales(sales) {}
+function bestSales(sales) {
+ const totalSalesByProductId = sales.reduce((totalsByProduct, singleSale) => {
+    if (!totalsByProduct[singleSale.pructId]) {
+      totalsByProduct[singleSale.productId] = singleSale.amount;
+    } else {
+      totalsByProduct[singleSale.productId] += singleSale.amount;
+    }
+    return totalsByProduct
+  }, {});
+  return Object.keys(totalSalesByProductId).reduce((bestSeller, product) => {
+    if (bestSeller === null) {
+      bestSeller = totalSalesByProductId[product];
+    } else if (totalSalesByProductId[product] > bestSeller.productId) {
+      bestSeller = totalSalesByProductId[product]
+    }
+    return bestSeller;
+  }, {})[0];
+}
 
 module.exports = { bestSales, sales };
