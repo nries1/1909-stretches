@@ -1,8 +1,12 @@
 function isEqual(obj1, obj2) {
-  // write your function here
-  // run your tests by running `jest isEqual`
-  // you can also run tests on every save by running
-  // `jest --watch isEqual`
+  return Object.keys(obj1).reduce((equality, key) => {
+    if (equality === false) return false;
+    if (obj1[key] === obj2[key] && obj2.hasOwnProperty(key)) {
+      return true;
+    } else {
+      return false;
+    }
+  }, true);
 }
 
 module.exports = { isEqual };
