@@ -47,7 +47,8 @@ const items = [
 function query(arr, obj) {
   return arr.reduce((result, item) => {
     if (Object.keys(obj).reduce((equals, key) => {
-      if (item[key] === obj[key]) equals += 1;
+      if (item[key] === obj[key]) ++equals;
+      return equals
     }, 0) === Object.keys(obj).length) {
       result.push(item);
     } 
