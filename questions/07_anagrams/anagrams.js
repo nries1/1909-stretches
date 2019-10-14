@@ -2,7 +2,7 @@
 // Return a boolean
 
 const checkAnagrams = (str1, str2) => {
-  //YOUR CODE
+  return Array.from(str1).every(el => str2.indexOf(el) !== -1);
 };
 
 module.exports = { checkAnagrams };
