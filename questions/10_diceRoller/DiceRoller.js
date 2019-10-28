@@ -10,9 +10,9 @@ class DiceRoller {
       !(totalDice > 0) ||
       !(typeof totalDice === 'number')
     ) {
-      throw new Error('just stop');
+      throw 'just stop';
     }
-    this.rolls = [];
+    this.history = [];
   }
   roll() {
     this.rolls.push(1);
