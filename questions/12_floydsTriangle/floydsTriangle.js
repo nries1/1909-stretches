@@ -7,14 +7,6 @@
 //  456
 
 const floydsTriangle = n => {
-  // let out = [];
-  // for (let i = 0; i < n; i++) {
-  //     let row = [];
-  //     for (let k = 0; k <= i; k++) {
-
-  //     }
-  // }
-
   let out = '';
   for (let i = 0; i < n; i++) {
     let row = i;
